@@ -1,6 +1,10 @@
 import { isWxAppEnv } from '../env';
 import { isObject, isString, isFunction, isUndefined } from '../types';
 
+/* 
+desc: 读写清除数据缓存
+from: https://mp.weixin.qq.com/debug/wxadoc/dev/api/data.html
+*/
 const isVaildItemParams = itemInfo => {
   if (isObject(itemInfo)) {
     const { key, data, success, fail, complete, sync, type } = itemInfo;
