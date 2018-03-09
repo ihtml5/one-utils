@@ -47,7 +47,7 @@ const getItem = (itemInfo = {}) => {
   }
   console.warn(`请检查传入的参数是否正确${itemInfo}`);
 };
-const getStorageInfo = (info = {}) => {
+const getAll = (info = {}) => {
   if (isVaildItemParams(info)) {
     try {
       const { success, fail, complete, sync } = info;
@@ -80,4 +80,4 @@ const removeAll = sync => {
   }
   return wx.clearStorage();
 };
-export { setItem, getItem, getStorageInfo, removeAll };
+export { setItem, getItem, getAll, removeAll };
