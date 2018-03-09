@@ -2,23 +2,23 @@ import { isWxAppEnv } from '../env';
 import { isObject, isString, isFunction, isUndefined } from '../types';
 
 const isVaildItemParams = itemInfo => {
-    if (isObject(itemInfo)) {
-        const { key, data, success, fail, complete, sync, type } = itemInfo;
-        if (!isString(key) && !isUndefined(key)) {
-            return false;
-        }
-        if (!isString(data) || !isObject(data)) {
-            return false;
-        }
-        if (!isFunction(success) && !sync && !isUndefined(fail)) {
-            return false;
-        }
-        if (!isFunction(fail) && !sync && !isUndefined(fail)) {
-            return false;
-        }
+  if (isObject(itemInfo)) {
+    const { key, data, success, fail, complete, sync, type } = itemInfo;
+    if (!isString(key) && !isUndefined(key)) {
+      return false;
     }
-    return false;
-}
+    if (!isString(data) || !isObject(data)) {
+      return false;
+    }
+    if (!isFunction(success) && !sync && !isUndefined(fail)) {
+      return false;
+    }
+    if (!isFunction(fail) && !sync && !isUndefined(fail)) {
+      return false;
+    }
+  }
+  return false;
+};
 const setItem = (itemInfo = {}) => {
   if (isVaildItemParams(itemInfo)) {
     const { key, data, success, fail, complete, sync } = itemInfo;
@@ -74,4 +74,10 @@ const removeItem = (itemInfo = {}) => {
   }
   console.warn(`请检查传入的参数是否正确${info}`);
 };
-export { setItem, getItem, getStorageInfo };
+const removeAll = sync => {
+  if (sync) {
+    return wx.clearStorageSync();
+  }
+  return wx.clearStorage();
+};
+export { setItem, getItem, getStorageInfo, removeAll };
