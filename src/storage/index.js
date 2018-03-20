@@ -84,4 +84,4 @@ const removeAll = sync => {
   }
   return wx.clearStorage();
 };
-export { setItem, getItem, getAll, removeAll };
+export { setItem, getItem, getAll, removeAll, isVaildItemParams};

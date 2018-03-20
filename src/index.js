@@ -1,14 +1,25 @@
 import { isWxAppEnv } from './env';
-import { isObject, isString, isFunction } from './types';
-import { setItem, getItem, getStorageInfo, isVaildItemParams } from './storage';
+import { isObject, isString, isFunction, isUndefined, isNumber } from './types';
+import { setItem, getItem, getAll, removeAll, isVaildItemParams } from './storage';
+import { getSystemInfo } from './system';
+import { getLoginCode, getUserInfo, getJWD } from './login';
+import { fetch } from './fetch';
 
 export {
     isWxAppEnv,
     isObject,
     isString,
     isFunction,
+    isUndefined,
+    isNumber,
     setItem,
     getItem,
-    getStorageInfo,
-    isVaildItemParams
+    isVaildItemParams,
+    fetch,
+    getLoginCode,
+    getUserInfo,
+    getJWD,
+    getSystemInfo,
+    getAll,
+    removeAll,
 }
