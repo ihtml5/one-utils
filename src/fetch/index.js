@@ -33,3 +33,5 @@ export const getCurrentPageUrlWithArgs = () => {
     urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length-1);
     return urlWithArgs;
 }
+
+export const  promiseify = (api) => (options, ...params) => new Promise((resolve, reject) => api(Object.assign({}, options, { success: resolve, fail: reject }), ...params));
