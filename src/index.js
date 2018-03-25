@@ -3,8 +3,8 @@ import { isObject, isString, isFunction, isUndefined, isNumber } from './types';
 import { setItem, getItem, getAll, removeAll, isVaildItemParams } from './storage';
 import { getSystemInfo } from './system';
 import { getLoginCode, getUserInfo, getJWD } from './login';
-import { fetch } from './fetch';
-
+import { fetch, promisfy } from './fetch';
+import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from './url';
 export {
     isWxAppEnv,
     isObject,
@@ -22,4 +22,7 @@ export {
     getSystemInfo,
     getAll,
     removeAll,
+    promisfy,
+    getCurrentPageUrl,
+    getCurrentPageUrlWithArgs,
 }
