@@ -1,6 +1,8 @@
 const isWxAppEnv = !wx || !Page || !App;
-const App = isWxAppEnv ? getApp() : void 0;
+const AppInfo = isWxAppEnv ? getApp() : void 0;
+const page = (config = {}) => (isWxAppEnv ? Page(config) : (config) => {});
 export {
     isWxAppEnv,
-    App,
+    AppInfo,
+    page,
 }

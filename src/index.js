@@ -1,4 +1,4 @@
-import { isWxAppEnv } from './env';
+import { isWxAppEnv, AppInfo, page } from './env';
 import { isObject, isString, isFunction, isUndefined, isNumber } from './types';
 import { setItem, getItem, getAll, removeAll, isVaildItemParams } from './storage';
 import { getSystemInfo } from './system';
@@ -7,6 +7,8 @@ import { fetch, promisfy } from './fetch';
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from './url';
 export {
     isWxAppEnv,
+    AppInfo,
+    page,
     isObject,
     isString,
     isFunction,

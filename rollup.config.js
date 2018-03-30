@@ -10,7 +10,7 @@ export default {
     file: 'build/index.js',
     format: 'umd',
     exports: 'named',
-    name: 'norton-wx',
+    name: 'nortonWX',
     sourceMap: false
   },
   plugins: [
