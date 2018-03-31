@@ -5,6 +5,8 @@ import { getSystemInfo } from './system';
 import { getLoginCode, getUserInfo, getJWD } from './login';
 import { fetch, promisfy } from './fetch';
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from './url';
+import emitter from './emitter';
+const { on, off, clear, clearAll, trigger, once } = emitter;
 export {
     isWxAppEnv,
     AppInfo,
@@ -27,4 +29,10 @@ export {
     promisfy,
     getCurrentPageUrl,
     getCurrentPageUrlWithArgs,
+    on,
+    off,
+    clear,
+    clearAll,
+    trigger,
+    once,
 }
