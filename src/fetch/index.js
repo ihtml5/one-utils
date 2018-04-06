@@ -12,11 +12,3 @@ export const fetch = ({ url, method, data, header }) =>
       complete: emptyFunction
     })
   );
-
-export const promisfy = api => (options, ...params) =>
-  new Promise((resolve, reject) =>
-    api(
-      Object.assign({}, options, { success: resolve, fail: reject }),
-      ...params
-    )
-  );
