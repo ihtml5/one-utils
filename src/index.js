@@ -6,7 +6,9 @@ import { getLoginCode, getUserInfo, getJWD } from './login';
 import { fetch, promisfy } from './fetch';
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from './url';
 import emitter from './emitter';
-const { on, off, clear, clearAll, trigger, once } = emitter;
+import regex from './regex';
+
+const { on: $on, off: $off, clear:$clear, clearAll: $clearAll, trigger: $trigger, once: $once } = emitter;
 export {
     isWxAppEnv,
     AppInfo,
@@ -29,10 +31,11 @@ export {
     promisfy,
     getCurrentPageUrl,
     getCurrentPageUrlWithArgs,
-    on,
-    off,
-    clear,
-    clearAll,
-    trigger,
-    once,
+    $on,
+    $off,
+    $clear,
+    $clearAll,
+    $trigger,
+    $once,
+    regex,
 }
