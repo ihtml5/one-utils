@@ -12,8 +12,9 @@ import { getLoginCode, getUserInfo, getJWD } from "./login";
 import { fetch } from "./fetch";
 import promisfy from "./promisfy";
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from "./url";
-import emitter from "./emitter";
+import { on as $on, off as $off, once as $once, trigger as $trigger} from "./emitter";
 import regex from "./regex";
+import $log from './log';
 
 const {
   on: $on,
@@ -51,5 +52,6 @@ export {
   $clearAll,
   $trigger,
   $once,
-  regex
+  regex,
+  $log,
 };
