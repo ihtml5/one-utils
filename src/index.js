@@ -12,7 +12,7 @@ import { getLoginCode, getUserInfo, getJWD } from "./login";
 import { fetch } from "./fetch";
 import promisfy from "./promisfy";
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from "./url";
-import { on as $on, off as $off, once as $once, trigger as $trigger} from "./emitter";
+import { on as $on, off as $off, once as $once, trigger as $trigger, once as $once} from "./emitter";
 import regex from "./regex";
 import $log from './log';
 
@@ -48,8 +48,8 @@ export {
   getCurrentPageUrlWithArgs,
   $on,
   $off,
-  $clear,
-  $clearAll,
+  clear,
+  clearAll,
   $trigger,
   $once,
   regex,
