@@ -1,0 +1,5 @@
+export {
+    wx,
+    Page,
+    App,
+}

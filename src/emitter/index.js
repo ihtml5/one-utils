@@ -1,7 +1,7 @@
 import { nativeHasOwn } from '../native';
 
-const customEventIndex = -1;
-const topices = {};
+let customEventIndex = -1;
+let topices = {};
 const emitter = {
   on: (topic, cb, context) => {
     if (!topices[topic]) {

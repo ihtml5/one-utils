@@ -1,10 +1,16 @@
 import { isWxAppEnv, AppInfo, page } from "./env";
+import {
+  App,
+  Page,
+  wx
+} from './global';
 import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
 import {
   setItem,
   getItem,
   getAll,
   removeAll,
+  removeItem,
   isVaildItemParams
 } from "./storage";
 import { getSystemInfo } from "./system";
@@ -12,15 +18,13 @@ import { getLoginCode, getUserInfo, getJWD } from "./login";
 import { fetch } from "./fetch";
 import promisfy from "./promisfy";
 import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from "./url";
-import { on as $on, off as $off, once as $once, trigger as $trigger, once as $once} from "./emitter";
+import emitter from "./emitter";
 import regex from "./regex";
 import $log from './log';
 
 const {
   on: $on,
   off: $off,
-  clear: $clear,
-  clearAll: $clearAll,
   trigger: $trigger,
   once: $once
 } = emitter;
@@ -43,15 +47,17 @@ export {
   getSystemInfo,
   getAll,
   removeAll,
+  removeItem,
   promisfy,
   getCurrentPageUrl,
   getCurrentPageUrlWithArgs,
   $on,
   $off,
-  clear,
-  clearAll,
   $trigger,
   $once,
   regex,
   $log,
+  App,
+  wx,
+  Page,
 };
