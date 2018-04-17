@@ -1,5 +1,5 @@
-# wx-utils
-Super useful WeChat utility tool library
+# one-utils
+Super useful utility tool library
 
 ### 特点
 1. 轻量
