@@ -1,8 +1,8 @@
 {
-  "name": "wx-utils",
-  "version": "1.0.0",
-  "description": "A small feature library that makes it easier to manipulate objects",
-  "main": "index.js",
+  "name": "one-utils",
+  "version": "0.1.0",
+  "description": "Super useful utility tool library",
+  "main": "build/index.js",
   "scripts": {
     "watch": "browser-sync start --proxy='localhost:8080' --files='*.html, dist/*.js'",
     "build": "rollup -c --watch && http-server",
@@ -14,15 +14,15 @@
   },
   "keywords": [
     "object",
-    "norton-wx",
-    "processing"
+    "wxapp",
+    "utils"
   ],
   "author": "ihtml5",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ihtml5/scalpel/issues"
+    "url": "https://github.com/ihtml5/one-utils/issues"
   },
-  "homepage": "https://github.com/ihtml5/scalpel#readme",
+  "homepage": "https://github.com/ihtml5/one-utils#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -34,9 +34,5 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.3.1",
     "uglify-es": "^3.1.0"
-  },
-  "dependencies": {
-    "jscalpel": "^1.2.0",
-    "jscalpel-orm": "^0.1.0"
   }
 }
