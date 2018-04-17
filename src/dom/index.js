@@ -1,6 +1,6 @@
 import { getEnv } from "../env";
 import { wx } from "../global";
-import { isFunction } from "../types";
+import { isFunction, isObject } from "../types";
 
 class WxDomCore {
   constructor(selector) {
@@ -37,10 +37,11 @@ class WxDomCore {
     if (this.environment === "wxapp") {
       return new Promise((resolve, reject) => {
         this.nodeList.boundingClientRect().exec(res => {
+          const returnVal = isObject(res[0]) ? res[0] : res;
           if (isFunction(callback)) {
-            callback(res[0]);
+            callback(returnVal);
           }
-          resolve(res[0]);
+          resolve(returnVal);
         });
       });
     }
