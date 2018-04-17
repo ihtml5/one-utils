@@ -7,41 +7,40 @@ class WxDomCore {
     this.environment = getEnv();
     this.selector = selector;
   }
+  querySelectorAll(selector) {
+    this.selector = selector;
+    if (this.environment === "browser") {
+      this.nodeList = document.querySelectorAll(selector);
+    }
+    if (this.environment === "wxapp") {
+        this.nodeList = wx.createSelectorQuery().selectAll(selector);
+    }
+    return this;
+  }
   querySelector(selector) {
     this.selector = selector;
     if (this.environment === "browser") {
-      this.node = document.querySelector(selector);
+      this.nodeList = document.querySelector(selector);
     }
     if (this.environment === "wxapp") {
-      this.node = wx.createSelectorQuery().select(selector);
+      this.nodeList = wx.createSelectorQuery().select(selector);
     }
     return this;
   }
   getBoundingClientRect(callback) {
     if (this.environment === "browser") {
       if (isFunction(callback)) {
-        callback(this.node.getBoundingClientRect());
+        callback(this.nodeList.getBoundingClientRect());
       }
       return this.node.getBoundingClientRect();
     }
     if (this.environment === "wxapp") {
       return new Promise((resolve, reject) => {
-        this.node.boundingClientRect().exec(res => {
-          const { top, left, right, bottom } = res[0];
+        this.nodeList.boundingClientRect().exec(res => {
           if (isFunction(callback)) {
-            callback({
-              top,
-              left,
-              right,
-              bottom
-            });
+            callback(res[0]);
           }
-          resolve({
-            top,
-            left,
-            right,
-            bottom
-          });
+          resolve(res[0]);
         });
       });
     }
