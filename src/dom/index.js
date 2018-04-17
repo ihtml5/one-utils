@@ -32,7 +32,7 @@ class WxDomCore {
                     if (isFunction(callback)) {
                         callback(res);
                     }
-                    resolve(res);xw
+                    resolve(res);
                 });
             });
         }
