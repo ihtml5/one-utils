@@ -29,10 +29,22 @@ class WxDomCore {
         if (this.envName === 'wxapp') {
             return new Promise((resolve, reject) => {
                 this._selectResult.boundingClientRect().exec(res => {
+                    const { top, left, right, bottom } = res[0];
                     if (isFunction(callback)) {
-                        callback(res);
+                        callback({
+                            top,
+                            left,
+                            right,
+                            bottom,
+                        });
                     }
-                    resolve(res);
+                    resolve({
+                    {
+                            top,
+                            left,
+                            right,
+                            bottom,
+                        }});
                 });
             });
         }
