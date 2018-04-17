@@ -1,8 +1,9 @@
-import { isWxAppEnv, AppInfo, page } from "./env";
+import { getEnv, isWxAppEnv } from "./env";
 import {
   App,
   Page,
-  wx
+  wx,
+  Component,
 } from './global';
 import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
 import {
@@ -13,6 +14,7 @@ import {
   removeItem,
   isVaildItemParams
 } from "./storage";
+import dom from './dom';
 import { getSystemInfo } from "./system";
 import { getLoginCode, getUserInfo, getJWD } from "./login";
 import { fetch } from "./fetch";
@@ -29,35 +31,47 @@ const {
   once: $once
 } = emitter;
 export {
+  // 获取宿主环境
   isWxAppEnv,
-  AppInfo,
-  page,
+  getEnv,
+  // 基础类型判断
   isObject,
   isString,
   isFunction,
   isUndefined,
   isNumber,
+  // 缓存读写
   setItem,
   getItem,
+  removeAll,
+  removeItem,
+  getAll,
   isVaildItemParams,
+  // 网络请求
   fetch,
   getLoginCode,
   getUserInfo,
   getJWD,
   getSystemInfo,
-  getAll,
-  removeAll,
-  removeItem,
+  // promisfy
   promisfy,
+  // url
   getCurrentPageUrl,
   getCurrentPageUrlWithArgs,
+  // 事件处理
   $on,
   $off,
   $trigger,
   $once,
+  // 常用正则表达式
   regex,
+  // 日志
   $log,
+  // 全局对象
   App,
   wx,
   Page,
+  Component,
+  // dom
+  dom,
 };

@@ -1,6 +1,6 @@
 import { isWxAppEnv } from '../env';
 import { isObject, isString, isFunction, isUndefined } from '../types';
-
+import promisfy from '../promisfy';
 /* 
 desc: 读写清除数据缓存
 from: https://mp.weixin.qq.com/debug/wxadoc/dev/api/data.html
@@ -23,7 +23,7 @@ const isVaildItemParams = itemInfo => {
   }
   return false;
 };
-const setItem = (itemInfo = {}) => {
+const setItem = (...rest) => {
   if (isVaildItemParams(itemInfo)) {
     const { key, data, success, fail, complete, sync } = itemInfo;
     try {
