@@ -1,8 +1,8 @@
 import { getEnv, ENVIRONMENTS } from "../env";
-import { wx } from "../global";
+import oneUtilsGlobal from "../global";
 import { isFunction, isObject } from "../types";
-
-class WxDomCore {
+const { wx } = oneUtilsGlobal;
+class Core {
   constructor(selector) {
     this.environment = getEnv();
     this.selector = selector;
@@ -48,4 +48,4 @@ class WxDomCore {
   }
 }
 
-export default new WxDomCore();
+export default new Core();

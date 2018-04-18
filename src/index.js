@@ -1,10 +1,6 @@
 import { getEnv, isWxAppEnv } from "./env";
-import {
-  App,
-  Page,
-  wx,
-  Component,
-} from './global';
+import oneUtilsGlobal from './global';
+import adapter from './adapter';
 import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
 import {
   setItem,
@@ -23,7 +19,12 @@ import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from "./url";
 import emitter from "./emitter";
 import regex from "./regex";
 import $log from './log';
-
+const {
+  App,
+  Page,
+  wx,
+  Component,
+} = oneUtilsGlobal;
 const {
   on: $on,
   off: $off,
@@ -74,4 +75,5 @@ export {
   Component,
   // dom
   dom,
+  adapter
 };
