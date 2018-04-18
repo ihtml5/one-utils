@@ -7,14 +7,12 @@ export const ENVIRONMENTS = {
     webworker: 3,
     unknown: 'unknown',
 }
-export const globalContext = (function (global) {
-    // 运行于 浏览器网页 / Web Worker / Node.js
-    return global.constructor.toString().match(/^function\s+(\w+)\s*\(\)\s*\{\s*\[native code\]\s*\}$/)[1];
-    // 输出以下其中之一: 
-    // "Window"
-    // "DedicatedWorkerGlobalScope", "SharedWorkerGlobalScope", "ServiceWorkerGlobalScope" 
-    // "Object"
-})(this);
+// 运行于 浏览器网页 / Web Worker / Node.js
+// 输出以下其中之一: 
+// "Window"
+// "DedicatedWorkerGlobalScope", "SharedWorkerGlobalScope", "ServiceWorkerGlobalScope" 
+// "Object"
+export const globalContext = (global => global.constructor.toString().match(/^function\s+(\w+)\s*\(\)\s*\{\s*\[native code\]\s*\}$/)[1])(this);
 export const isWxAppEnv = !(!wx || !Page || !App || !Component);
 export const getEnv = () => {
     if (isWxAppEnv) {
