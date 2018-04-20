@@ -7,16 +7,18 @@
     <body>
         <script charset="utf-8" src="../../build/index.js"></script>
         <script charset="utf-8">
-            oneUtils.adapter.inject('ua', function(envs) {
-                console.log('envs', envs);
-                return function () {
-                    if (oneUtils.getEnv() === envs.web) {
-                        console.log('web');
-                    }
-                }
-            });
-            console.log(oneUtils.dom);
-            oneUtils.dom.ua();
+            // const { engine, adapter, dom } = oneUtils;
+            // adapter.inject('ua', function(envs) {
+            //     console.log('envs', envs);
+            //     return function () {
+            //         if (oneUtils.getEnv() === envs.web) {
+            //             console.log('web');
+            //         }
+            //     }
+            // });
+            // console.log(dom);
+            // dom.ua();
+            console.log('oneUtils', oneUtils.dom.querySelector('a'));
         </script>
     </body>
 </html>

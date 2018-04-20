@@ -1,7 +1,5 @@
 // http://www.harmontan.info/index.php/2015/08/29/detect-global-object-type-and-runtime/
 import { isObject } from "../types";
-import oneUtilsGlobal from "../global";
-const { wx, Page, App, Component } = oneUtilsGlobal;
 export const ENVIRONMENTS = {
   web: 0,
   wxapp: 1,
@@ -20,7 +18,7 @@ const globalContext =
     // "DedicatedWorkerGlobalScope", "SharedWorkerGlobalScope", "ServiceWorkerGlobalScope"
     // "Object"
   })(window || global);
-export const isWxAppEnv = !(!wx || !Page || !App || !Component);
+export const isWxAppEnv = false;
 export const getEnv = () => {
   if (isWxAppEnv) {
     return ENVIRONMENTS.wxapp;

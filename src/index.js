@@ -1,5 +1,4 @@
 import { getEnv, isWxAppEnv } from "./env";
-import oneUtilsGlobal from './global';
 import adapter from './adapter';
 import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
 import {
@@ -11,6 +10,7 @@ import {
   isVaildItemParams
 } from "./storage";
 import dom from './dom';
+import engine from './engine';
 import { getSystemInfo } from "./system";
 import { getLoginCode, getUserInfo, getJWD } from "./login";
 import { fetch } from "./fetch";
@@ -19,12 +19,7 @@ import { getCurrentPageUrl, getCurrentPageUrlWithArgs } from "./url";
 import emitter from "./emitter";
 import regex from "./regex";
 import $log from './log';
-const {
-  App,
-  Page,
-  wx,
-  Component,
-} = oneUtilsGlobal;
+
 const {
   on: $on,
   off: $off,
@@ -69,11 +64,8 @@ export {
   // 日志
   $log,
   // 全局对象
-  App,
-  wx,
-  Page,
-  Component,
   // dom
   dom,
-  adapter
+  adapter,
+  engine,
 };
