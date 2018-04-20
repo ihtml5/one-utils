@@ -1,18 +1,18 @@
 import { getEnv, ENVIRONMENTS } from "../env";
 import webAdapter from './web';
 import wxappAdapter from './wx';
+import { create } from "domain";
 
-const env = getEnv();
-let AdapterIns = null;
-if (env === ENVIRONMENTS.web) {
-    AdapterIns = new webAdapter({
-        engine: window,
-    });
-}
-if (env === ENVIRONMENTS.wxapp) {
-    AdapterIns = new wxappAdapter({
-        engine: wx,
-    });
+const createAdapter = engine => {
+    const env = getEnv();
+    let AdapterIns = null;
+    if (env === ENVIRONMENTS.web) {
+        AdapterIns = new webAdapter(engine);
+    }
+    if (env === ENVIRONMENTS.wxapp) {
+        AdapterIns = new wxappAdapter(engine);
+    }
+    return AdapterIns;
 }
 
-export default AdapterIns;
+export default  createAdapter;

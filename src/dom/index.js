@@ -1,20 +1,24 @@
-import AdapterIns from '../adapter';
+import createAdapter from '../adapter';
 import { isFunction, isObject } from "../types";
 
 class DomWrapper {
   constructor(selector) {
-    this.selector = selector;
+    this.AdapterIns = createAdapter(window || wx);
+  }
+  init({
+    engine,
+  }) {
+    this.AdapterIns = createAdapter(engine);
   }
   querySelector(selector) {
-    console.log('log', AdapterIns.querySelector(selector));
-    return AdapterIns.querySelector(selector);
+    return this.AdapterIns.querySelector(selector);
   }
   querySelectorAll(selector) {
     this.selector = selector;
-    return AdapterIns.querySelectorAll(selector);
+    return this.AdapterIns.querySelectorAll(selector);
   }
   getBoundingClientRect(callback) {
-    return AdapterIns.getBoundingClientRect(callback);
+    return this.AdapterIns.getBoundingClientRect(callback);
   }
 }
 
