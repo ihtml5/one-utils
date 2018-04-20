@@ -2,9 +2,6 @@ import createAdapter from '../adapter';
 import { isFunction, isObject } from "../types";
 
 class DomWrapper {
-  constructor(selector) {
-    this.AdapterIns = createAdapter(window || wx);
-  }
   init({
     engine,
   }) {

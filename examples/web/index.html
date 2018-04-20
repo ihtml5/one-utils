@@ -18,7 +18,10 @@
             // });
             // console.log(dom);
             // dom.ua();
-            console.log('oneUtils', oneUtils.dom.querySelector('body'));
+            const oneIns = oneUtils.create({
+                engine: window,
+            });
+            console.log('oneUtils', oneIns.dom.querySelector('body'));
         </script>
     </body>
 </html>

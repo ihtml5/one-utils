@@ -26,46 +26,57 @@ const {
   trigger: $trigger,
   once: $once
 } = emitter;
-export {
-  // 获取宿主环境
-  isWxAppEnv,
-  getEnv,
-  // 基础类型判断
-  isObject,
-  isString,
-  isFunction,
-  isUndefined,
-  isNumber,
-  // 缓存读写
-  setItem,
-  getItem,
-  removeAll,
-  removeItem,
-  getAll,
-  isVaildItemParams,
-  // 网络请求
-  fetch,
-  getLoginCode,
-  getUserInfo,
-  getJWD,
-  getSystemInfo,
-  // promisfy
-  promisfy,
-  // url
-  getCurrentPageUrl,
-  getCurrentPageUrlWithArgs,
-  // 事件处理
-  $on,
-  $off,
-  $trigger,
-  $once,
-  // 常用正则表达式
-  regex,
-  // 日志
-  $log,
-  // 全局对象
-  // dom
-  dom,
-  adapter,
+
+
+const create = ({
   engine,
-};
+}) => {
+  dom.init({engine});
+  return {
+    // 获取宿主环境
+    isWxAppEnv,
+    getEnv,
+    // 基础类型判断
+    isObject,
+    isString,
+    isFunction,
+    isUndefined,
+    isNumber,
+    // 缓存读写
+    setItem,
+    getItem,
+    removeAll,
+    removeItem,
+    getAll,
+    isVaildItemParams,
+    // 网络请求
+    fetch,
+    getLoginCode,
+    getUserInfo,
+    getJWD,
+    getSystemInfo,
+    // promisfy
+    promisfy,
+    // url
+    getCurrentPageUrl,
+    getCurrentPageUrlWithArgs,
+    // 事件处理
+    $on,
+    $off,
+    $trigger,
+    $once,
+    // 常用正则表达式
+    regex,
+    // 日志
+    $log,
+    // 全局对象
+    // dom
+    dom,
+    adapter,
+    engine,
+  };
+}
+
+export {
+  create,
+}
