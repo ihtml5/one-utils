@@ -70,9 +70,9 @@ const create = ({
     $log,
     // 全局对象
     // dom
-    dom,
     adapter,
     engine,
+    dom,
   };
 }
 

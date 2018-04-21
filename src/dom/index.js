@@ -8,6 +8,7 @@ class DomWrapper {
     this.AdapterIns = createAdapter({
       engine,
     });
+    return this;
   }
   querySelector(selector) {
     console.log(this.AdapterIns);
