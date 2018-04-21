@@ -24,10 +24,10 @@ export const getEnv = ({
   if (isObject(engine) && engine.login) {
     return ENVIRONMENTS.wxapp;
   }
-  if (isObject(engine) && engine.location) {
+  if (engine === window) {
     return ENVIRONMENTS.web;
   }
-  if (isObject(engine) && engine.setTimeout) {
+  if (engine === global) {
     return ENVIRONMENTS.node;
   }
   if (
