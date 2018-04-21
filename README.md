@@ -7,3 +7,7 @@ Super useful utility tool library
 npm install one-utils --save
 yarn add one-utils --save
 ```
+### Api
+
+1. oneUtils.create({ engine: wx || window });
+> 初始化oneUtils运行环境
