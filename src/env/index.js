@@ -18,15 +18,16 @@ const globalContext =
     // "DedicatedWorkerGlobalScope", "SharedWorkerGlobalScope", "ServiceWorkerGlobalScope"
     // "Object"
   })(window || global);
-export const isWxAppEnv = false;
-export const getEnv = () => {
-  if (isWxAppEnv) {
+export const getEnv = ({
+  engine,
+}) => {
+  if (isObject(engine) && engine.login) {
     return ENVIRONMENTS.wxapp;
   }
-  if (globalContext === "Window") {
+  if (isObject(engine) && engine.location) {
     return ENVIRONMENTS.web;
   }
-  if (globalContext === "Object") {
+  if (isObject(engine) && engine.setTimeout) {
     return ENVIRONMENTS.node;
   }
   if (

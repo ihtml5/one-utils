@@ -2,6 +2,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
+import builtins from 'rollup-plugin-node-builtins';
 import { minify } from 'uglify-es';
 
 export default {
@@ -15,6 +16,7 @@ export default {
   },
   plugins: [
     resolve(),
+    builtins(),
     babel({
       exclude: 'node_modules/**' // only transpile our source code
     }),

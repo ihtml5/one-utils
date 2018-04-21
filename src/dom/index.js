@@ -5,9 +5,12 @@ class DomWrapper {
   init({
     engine,
   }) {
-    this.AdapterIns = createAdapter(engine);
+    this.AdapterIns = createAdapter({
+      engine,
+    });
   }
   querySelector(selector) {
+    console.log(this.AdapterIns);
     return this.AdapterIns.querySelector(selector);
   }
   querySelectorAll(selector) {

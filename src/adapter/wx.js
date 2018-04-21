@@ -2,11 +2,12 @@
 import { isObject, isFunction } from '../types';
 
 class WxAppAdapter {
-    constructor(engine) {
+    constructor(props = {}) {
+        const { engine } = props;
         this.engine = engine;
     }
     querySelector(selector) {
-        this.nodeList = this.engine.createSelectorQuery().select(selector);
+        this.nodeList = this.engine.createSelectorQuery().select(`${selector}`);
         return this.nodeList;
     }
     querySelectorAll(selector) {
@@ -26,4 +27,4 @@ class WxAppAdapter {
     }
 }
 
-export default WebAdapter;
+export default WxAppAdapter;

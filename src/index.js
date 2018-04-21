@@ -1,4 +1,4 @@
-import { getEnv, isWxAppEnv } from "./env";
+import { getEnv } from "./env";
 import adapter from './adapter';
 import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
 import {
@@ -34,7 +34,6 @@ const create = ({
   dom.init({engine});
   return {
     // 获取宿主环境
-    isWxAppEnv,
     getEnv,
     // 基础类型判断
     isObject,

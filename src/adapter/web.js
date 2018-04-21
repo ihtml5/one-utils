@@ -1,7 +1,8 @@
 import { isFunction } from '../types';
 
 class WebAdapter {
-    constructor(engine) {
+    constructor(props = {}) {
+        const { engine } = props;
         this.engine = engine;
     }
     querySelector(selector) {

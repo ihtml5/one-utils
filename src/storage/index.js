@@ -1,4 +1,3 @@
-import { isWxAppEnv } from '../env';
 import { isObject, isString, isFunction, isUndefined } from '../types';
 import promisfy from '../promisfy';
 /* 
