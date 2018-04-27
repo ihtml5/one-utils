@@ -29,5 +29,5 @@ oneIns.fetch({
   method: 'GET/POST',
   header: {}, // custom request header,
   body: {}, // submit data
-})
+}).then(res => console.log(res));
 ```
