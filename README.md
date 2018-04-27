@@ -10,8 +10,8 @@ yarn add one-utils --save
 ### Api
 
 ### initial
+> 初始化oneUtils运行环境，创建实例
 ```javacript
-// 初始化oneUtils运行环境，创建实例
 const oneIns = oneUtils.create({ engine: wx || window });
 ```
 #### dom
@@ -21,6 +21,7 @@ const oneIns = oneUtils.create({ engine: wx || window });
 > 选择界面所有符合条件的元素
 
 ### fetch
+> 和web fetch用法相同
 ```javascript
 oneIns.fetch({
   url: 'http://github.com',
