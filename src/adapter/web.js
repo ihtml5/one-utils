@@ -19,6 +19,19 @@ class WebAdapter {
         }
         return this.nodeList.getBoundingClientRect();
     }
+    fetch({
+        method,
+        url,
+        body,
+        header
+    }) {
+        return fetch({
+            url,
+            method,
+            body,
+            header,
+        });
+    }
 }
 
 export default WebAdapter;
