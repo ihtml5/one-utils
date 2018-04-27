@@ -1,5 +1,5 @@
 // http://www.harmontan.info/index.php/2015/08/29/detect-global-object-type-and-runtime/
-import { isObject } from "../types";
+import { isObject } from "../base";
 export const ENVIRONMENTS = {
   web: 0,
   wxapp: 1,

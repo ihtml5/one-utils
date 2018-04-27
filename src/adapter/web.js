@@ -1,4 +1,4 @@
-import { isFunction } from '../types';
+import { isFunction } from '../base';
 
 class WebAdapter {
     constructor(props = {}) {

@@ -1,4 +1,4 @@
-export const emptyFunction = () => {}
+import { emptyFunction } from '../base';
 // 获取登录code码
 export const getLoginCode = () => new Promise((resolve, reject) => wx.login({
     success: resolve,

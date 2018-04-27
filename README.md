@@ -11,7 +11,7 @@ yarn add one-utils --save
 
 1. const oneIns = oneUtils.create({ engine: wx || window });
 > 初始化oneUtils运行环境，创建实例
-2. oneIns.dom.querySelector(selector)
+2. oneIns.querySelector(selector)
 > 选择界面第一个符合条件的元素
-3. oneIns.dom.querySelectorAll(selector)
+3. oneIns.querySelectorAll(selector)
 > 选择界面所有符合条件的元素

@@ -1,4 +1,4 @@
-import { isObject, isFunction } from "../types";
+import { isObject, isFunction } from "../base";
 
 class WxAppAdapter {
   constructor(props = {}) {

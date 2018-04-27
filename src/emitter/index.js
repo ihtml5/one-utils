@@ -1,4 +1,4 @@
-import { nativeHasOwn } from '../native';
+import { nativeHasOwn } from '../base';
 
 let customEventIndex = -1;
 let topices = {};

@@ -1,26 +1,35 @@
-import dom from '../dom';
 import createAdapter from '../adapter';
-import { getEnv } from "./env";
-import { isObject, isString, isFunction, isUndefined, isNumber } from "./types";
-import { $on, $off, $once, $trigger } from '../emitter';
+import { getEnv } from "../env";
+import $log from '../log';
+import { isObject, isString, isFunction, isUndefined, isNumber } from "../base";
+import $emitter from '../emitter';
+import $regex from '../regex';
+import $promisfy from '../promisfy';
+
+const {
+    $on,
+    $off,
+    $once,
+    $trigger
+} = $emitter;
 
 class Core {
     constructor({
         engine,
         log,
-        emitter,
         promisfy,
         on,
         off,
         once,
         trigger,
+        regex = {}
     }) {
         this.engine = engine;
         this.adapterIns = createAdapter({
             engine,
         });
+        $log('this.adapterIns====', this.adapterIns);
         this.$log = log || $log;
-        this.emitter = emitter || $emitter;
         this.promisfy = promisfy || $promisfy;
         this.regex = Object.assign({}, $regex, regex);
         this.types = {
@@ -50,6 +59,7 @@ class Core {
         })
     }
     querySelector(selector) {
+        $log('this.adapterIns', this);
         return this.adapterIns.querySelector(selector);
     }
     querySelectorAll(selector) {

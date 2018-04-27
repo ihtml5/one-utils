@@ -1,1 +1,0 @@
-export const nativeHasOwn = Object.prototype.hasOwnProperty;

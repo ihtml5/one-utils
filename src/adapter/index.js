@@ -1,7 +1,7 @@
 import { getEnv, ENVIRONMENTS } from "../env";
 import webAdapter from './web';
 import wxappAdapter from './wx';
-import { create } from "domain";
+import $log from '../log';
 
 const createAdapter = ({
     engine,
@@ -9,6 +9,7 @@ const createAdapter = ({
     const env = getEnv({
         engine,
     });
+    $log(env, ENVIRONMENTS, engine);
     let AdapterIns = null;
     if (env === ENVIRONMENTS.web) {
         AdapterIns = new webAdapter({
@@ -19,8 +20,9 @@ const createAdapter = ({
         AdapterIns = new wxappAdapter({
             engine,
         });
+        $log('AdapterIns:::', AdapterIns);
     }
     return AdapterIns;
 }
 
-export default  createAdapter;
+export default createAdapter;
