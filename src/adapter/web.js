@@ -25,7 +25,7 @@ class WebAdapter {
         body,
         header
     }) {
-        return fetch({
+        return this.engine.fetch({
             url,
             method,
             body,

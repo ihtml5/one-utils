@@ -59,7 +59,6 @@ class Core {
         })
     }
     querySelector(selector) {
-        $log('this.adapterIns', this);
         return this.adapterIns.querySelector(selector);
     }
     querySelectorAll(selector) {
