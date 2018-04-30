@@ -14,14 +14,14 @@ yarn add one-utils --save
 ```javacript
 const oneIns = oneUtils.create({ engine: wx || window });
 ```
-### 2. dom
+### 2. [dom](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector)
 > 根据运行环境不同，选择dom或者wxml
 + oneIns.querySelector(selector)
-> 选择界面第一个符合条件的元素
+> 返回文档中与指定选择器或选择器组匹配的第一个Element
 + oneIns.querySelectorAll(selector)
 > 选择界面所有符合条件的元素
 
-### 3.fetch
+### 3. [fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)
 > 和web fetch用法相同
 ```javascript
 oneIns.fetch({
