@@ -5,7 +5,7 @@ class Monitor {
     this.options = options;
     this.options.timestamps = timestamps;
     this.options.level = level;
-    this.msg = msg;
+    this.options.msg = msg;
     this.options.ua = navigator.userAgent;
     this.options.uniqueid = uniqueid;
     this.options.stack = stack;
